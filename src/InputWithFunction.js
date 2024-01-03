@@ -7,7 +7,7 @@ export default function Input(){
     const [lastName, setLastName] = useState("");
 
     useEffect(() =>{
-        //This function act as both compoentDidMount and ComponentDidUpdate
+        //This function act as both componentDidMount and ComponentDidUpdate
         document.title = name+ " "+lastName;
     })
 
@@ -24,7 +24,8 @@ export default function Input(){
      // useEffect(() =>{
         
     //     document.title = name+ " "+lastName;
-    // },[lastname]) --> this mean if change the lastname then the title will get updated
+    // },[lastname]) --> this mean if you want to change the lastname then the title will get updated
+    // bcoz you have passed "lastName" as an argument
     
    
     return(
