@@ -1,10 +1,31 @@
-import { useState } from "react";
+import { useState, useEffect} from "react";
 export default function Input(){
 
     // const [name,setName] = useState("Shyam");
 
     const [name,setName] = useState("");
     const [lastName, setLastName] = useState("");
+
+    useEffect(() =>{
+        //This function act as both compoentDidMount and ComponentDidUpdate
+        document.title = name+ " "+lastName;
+    })
+
+    //but if you want to  use "useEffect" function only as ComponentDidMount the pass an empty []
+    // useEffect(() =>{
+        
+    //     document.title = name+ " "+lastName;
+    // },[])
+
+    //AND
+    // We can make this function equivalent to ComponentDidUpdate also by passing
+    // some condition inside the array
+
+     // useEffect(() =>{
+        
+    //     document.title = name+ " "+lastName;
+    // },[lastname]) --> this mean if change the lastname then the title will get updated
+    
    
     return(
         <>
