@@ -9,6 +9,15 @@ export default function Input(){
     useEffect(() =>{
         //This function act as both componentDidMount and ComponentDidUpdate
         document.title = name+ " "+lastName;
+    },[lastName]);
+
+
+    useEffect(()=>{
+        let timer = setInterval(()=>{
+            console.log("window width:", window.innerWidth);
+        }, 2000);
+
+        return(clearInterval(timer));
     })
 
     //but if you want to  use "useEffect" function only as ComponentDidMount the pass an empty []
